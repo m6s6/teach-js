@@ -1,0 +1,46 @@
+[
+    {
+        "number": 4545,
+        "balance": 15000000,
+
+        "owner":{
+            "name":"Артур",
+            "surname":"Косточкин",
+            "email":"artur@mail.ru"
+        },
+        "bank":{
+            "name":"Tinkoff",
+            "beck": 67235769,
+            "logo":"./image/tinkoff.jpg"
+        }
+    },
+    {
+        "number": 1008,
+        "balance": 100,
+        "owner":{
+            "name":"Эдуард",
+            "surname":"Бубочкин",
+            "email":"bub@mail.ru"
+        },
+        "bank":{
+            "name":"ВТБ-Банк",
+            "beck": 10100002,
+            "logo":"./image/vtb.jpg"
+        }
+    },
+    {
+        "number": 2008,
+        "balance": 40900,
+
+        "owner":{
+            "name":"Кирилл",
+            "surname":"Маслов",
+            "email":"maslov@mail.ru"
+        },
+        "bank":{
+            "name":"Tinkoff",
+            "beck": 67235769,
+            "logo":"./image/tinkoff.jpg"
+        }
+    }
+]

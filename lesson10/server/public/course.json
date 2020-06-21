@@ -1,0 +1,16 @@
+{
+
+    "name":"Программирование",
+    "longTime":3,
+    "price":75000,
+    "teacher":{
+        "name": "Анатолий",
+        "surname": "Кодин",
+        "longTimeWorking": 4
+    },
+    "school":{
+        "name":"Авиаторов",
+        "address":"г.Москва, ул. Барикадная",
+        "site":"school.ru"
+    }
+}

@@ -4,6 +4,8 @@ import ListTasks from './components/tasks/ListTasks';
 import {connect} from 'react-redux';
 import {addTask,editTask,deleteTask} from './store/tasks/actions';
 import {addComment,deleteComment,likeComment} from './store/comments/actions';
+import {login} from "./store/main/actions";
+import Authorize from './components/tasks/Authorize';
 /**
  * Статусы могут быть:
  *-todo
@@ -62,13 +64,21 @@ const App = props=>{
                 <h1>Список задач</h1>
             </header>
             {/* <NewFormTaskList addNewTask={addNewTask}/> */}
-            <ListTasks comments={props.comments} tasks={props.tasks} likeCommentA={props.likeComment} handleDeletComment={handleDeletComment} addNewComment={addNewComment} handleChangeTask={handleChangeTask} handleDeletTask={handleDeletTask} addNewTask={addNewTask} updateStatusTask={updateStatusTask}/>
+            {
+               props.isLogin
+                ?<ListTasks comments={props.comments} tasks={props.tasks} likeCommentA={props.likeComment} handleDeletComment={handleDeletComment} addNewComment={addNewComment} handleChangeTask={handleChangeTask} handleDeletTask={handleDeletTask} addNewTask={addNewTask} updateStatusTask={updateStatusTask}/>
+                :<Authorize login={props.login}/>
+
+            }
+            
         </>
     )
 }
 
+
 const mapStateToProps = state => ({
     tasks: state.tasks,
-    comments: state.comments
+    comments: state.comments,
+    isLogin: state.main.isLogin
 });
-export default connect(mapStateToProps, {addTask, editTask,deleteTask,addComment,deleteComment,likeComment})(App);
+export default connect(mapStateToProps, {addTask, editTask,deleteTask,addComment,deleteComment,likeComment,login})(App);
