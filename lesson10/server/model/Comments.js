@@ -9,17 +9,17 @@ export default class Comments {
     }
 
     static async createComment( comment ) {
-        const res = await collection.insertOne(comment);
+        const res = await (await collection).insertOne(comment);
         return res.insertedId.toString();
     }
 
     static async deleteComment( id ) {
-        await collection.deleteOne({_id: ObjectID(id)});
+        await (await collection).deleteOne({_id: ObjectID(id)});
         return true;
     }
 
     static async updateComment( id, comment ) {
-        await collection.updateOne(
+        await (await collection).updateOne(
             {_id: ObjectID(id)},
             {$set: comment}
         );
@@ -27,7 +27,7 @@ export default class Comments {
     }
 
     static async incLikesComment( id ) {
-        await collection.updateOne(
+        await (await collection).updateOne(
             {_id: ObjectID(id)},
             {$inc: {likes: 1}}
         );

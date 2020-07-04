@@ -1,13 +1,5 @@
 
-const initalState = [
-    {
-        id:1,
-            name:"Сделать первый проект",
-            deadline:'2020-06-15',
-            description:'Первый проект по теме React',
-            status: 'todo'
-    }
-]
+const initalState = [];
 
 
 const taskReducer = (state=initalState, action)=>{

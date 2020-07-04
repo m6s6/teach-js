@@ -2,19 +2,20 @@
   "name": "lesson10",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "start": "webpack-dev-server -d --content-base ./public",
     "server-dev": "nodemon --exec babel-node  --inspect ./server",
-    "server-prod": "node ./server"
+    "server-prod": "babel-node ./server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.9.4",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
@@ -38,7 +39,8 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-react"
+      "@babel/preset-react",
+      "@babel/preset-env"
     ]
   },
   "devDependencies": {

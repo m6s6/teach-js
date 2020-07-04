@@ -28,23 +28,24 @@ const Authorize =props=>{
             });
     };
 
-    const registration=()=>{
-        fetch('http://localhost:5000/registration/',{
-                method:'post',
+    const registration = () => {
+        fetch('http://localhost:5000/registration/',
+            {
+                method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body:JSON.stringify({
+                body: JSON.stringify({
                     login,
                     password,
                     name
-                })}
-            ).then(res=>res.json()).then(res=>{
-                props.login(login, name, res.token),
-                setLogin(''),
-                setPassword('')
-            });
-        
+                })
+            }
+        ).then(res => res.json()).then(res => {
+            props.login(login, name, res.token);
+            setLogin('');
+            setPassword('');
+        });
     };
 
 

@@ -18,12 +18,12 @@ export default class TasksModel {
     }
 
     static async createTask(task){
-        const res = await collection.insertOne(task);
+        const res = await (await collection).insertOne(task);
         return res.insertedId.toString();
     }
 
     static async updateTask(id, task){
-        await collection.updateOne(
+        await (await collection).updateOne(
             {_id: ObjectID(id)},
             {$set: task}
         );
@@ -31,7 +31,7 @@ export default class TasksModel {
     }
 
     static async deleteTask(id) {
-        await collection.deleteOne({_id: ObjectID(id)});
+        await (await collection).deleteOne({_id: ObjectID(id)});
         return true;
     }
 }

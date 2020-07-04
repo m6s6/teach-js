@@ -4,15 +4,13 @@ import commentsRouter from './comments';
 
 const router = Router();
 
-outer.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
-
         const tasks = await Tasks.getAllTasksWithComments();
-
         res.send(JSON.stringify(tasks))
     }
     catch (e) {
-        console.log(e.message);
+        console.log(e.message); 
         res.sendStatus(400);
     }
 }).post('/', async (req, res) => {

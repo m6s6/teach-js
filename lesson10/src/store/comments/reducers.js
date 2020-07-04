@@ -1,14 +1,6 @@
 import moment from "moment";
 
-const initialState = [
-    {
-        text:"Важная задача",
-        date:1591391997359,
-        taskId:1,
-        id:1,
-        likes:0
-    }
-]; 
+const initialState = []; 
 
 const commentsReducer = (state = initialState, action)=>{
     switch (action.type){
